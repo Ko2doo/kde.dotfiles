@@ -1,0 +1,45 @@
+[$Version]
+update_info=dolphin_directorysizemode.upd:convert-directorysizecount-to-directorysizemode
+
+[CompactMode]
+IconSize=22
+PreviewSize=32
+
+[DetailsMode]
+PreviewSize=16
+
+[General]
+GlobalViewProps=false
+OpenExternallyCalledFolderInNewTab=true
+ShowStatusBar=FullWidth
+ShowZoomSlider=false
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2024,5,15,14,40,19.84
+
+[IconsMode]
+IconSize=64
+PreviewSize=96
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+
+[PreviewSettings]
+Plugins=ffmpegthumbs,kraorathumbnail,imagethumbnail,exrthumbnail,jpegthumbnail,windowsimagethumbnail,svgthumbnail,comicbookthumbnail,directorythumbnail,cursorthumbnail,fontthumbnail,rawthumbnail
+
+[Toolbar mainToolBar]
+IconSize=16
+
+[VersionControl]
+enabledPlugins=Git
+
+[ViewPropertiesDialog]
+1920x1080 screen: Height=649
+1920x1080 screen: Width=611

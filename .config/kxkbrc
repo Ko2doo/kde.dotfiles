@@ -1,0 +1,6 @@
+[Layout]
+DisplayNames=,
+Options=grp:alt_shift_toggle,keypad:oss
+ResetOldOptions=true
+Use=true
+VariantList=,

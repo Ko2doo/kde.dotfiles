@@ -1,0 +1,7 @@
+[Daemon]
+Autolock=false
+LockGrace=10
+Timeout=0
+
+[Greeter][LnF][General]
+showMediaControls=false
