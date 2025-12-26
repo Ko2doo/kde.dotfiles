@@ -138,11 +138,10 @@ alias cat="bat"
 # https://github.com/muesli/duf
 alias df="duf"
 
-# Настройки Capacitor.js, расскоментировать если используется
 # export CAPACITOR_ANDROID_STUDIO_PATH="/urs/bin/android-studio"
-# export CAPACITOR_ANDROID_STUDIO_PATH="/opt/android-studio/bin/studio.sh"
-# export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
-# export PATH=$JAVA_HOME/bin:$PATH
+export CAPACITOR_ANDROID_STUDIO_PATH="/opt/android-studio/bin/studio.sh"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Включаем starship
 eval "$(starship init zsh)"
@@ -153,3 +152,27 @@ export NVM_DIR="$HOME/.nvm"
 
 # Сдвигаем IPv4 выше IPv6, ничего не ломая в системе но ремонтируя https://registry.npmjs.org/
 # export NODE_OPTIONS="--dns-result-order=ipv4first"
+
+# Автоматическое переключение версии node.js если есть .nvmrc
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Возвращение к nvm default версии"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
