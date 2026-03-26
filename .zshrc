@@ -119,6 +119,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
+# Обновление oh-my-zsh
+zstyle ':omz:update' mode reminder
+
 # Алиас для запуска файлов в vscodium (flatpak версия) через терминал:
 alias codium="flatpak run com.vscodium.codium "
 
@@ -143,8 +146,11 @@ export CAPACITOR_ANDROID_STUDIO_PATH="/opt/android-studio/bin/studio.sh"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
-# Включаем starship
-eval "$(starship init zsh)"
+# Android sdk
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -176,3 +182,6 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Включаем starship
+eval "$(starship init zsh)"
