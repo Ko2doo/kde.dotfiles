@@ -1,1 +1,10 @@
-git, zsh, oh-my-zsh, starship https://starship.rs/guide/, nvm и т.д.
+git, zsh, oh-my-zsh, starship https://starship.rs/guide/, nvm, kvantum и т.д.
+
+KDE Global Theme:
+WhiteSur: https://github.com/vinceliuice/WhiteSur-kde
+
+KDE Icon Theme:
+Colloid: //github.com/vinceliuice/Colloid-icon-theme
+Kora: https://github.com/bikass/kora
+Papirus: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
+WhiteSur: https://github.com/vinceliuice/WhiteSur-icon-theme
